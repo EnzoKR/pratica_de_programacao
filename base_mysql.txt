@@ -1,0 +1,23 @@
+CREATE DATABASE carros;
+USE DATABASE carros;
+
+CREATE TABLE automoveis (
+  codigo INT AUTO_INCREMENT PRIMARY KEY,
+  nome VARCHAR(255),
+  placa VARCHAR(10),
+  chassi VARCHAR(17),
+  montadora_codigo INT,
+  FOREIGN KEY (montadora_codigo) REFERENCES montadoras(codigo)
+);
+
+CREATE TABLE montadora (
+  codigo INT AUTO_INCREMENT PRIMARY KEY,
+  nome VARCHAR(255)
+);
+
+INSERT INTO montadora (nome) VALUES
+('Volkswagen'),
+('Ford'),
+('Fiat'),
+('Chevrolet');
+
